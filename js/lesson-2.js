@@ -298,7 +298,46 @@
 //   },
 // ];
 
-
 // const allTopics = courses.flatMap(course => course.topics);
 // const uniqueTopics = allTopics.filter((topic, index, array) => array.indexOf(topic) === index);
 // console.log(uniqueTopics);
+
+// ЗАДАЧА 7
+// Напишіть функцію для роботи з колекцією навчаючих курсів courses:
+
+// addCourse(name) - добавляє курс у кінець колекції
+// removeCourse(name) - видаляє курс із колекції
+// updateCourse(oldName, newName)- змінює імя на нове
+const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
+
+addCourse("Express"); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+addCourse("CSS"); // 'У вас уже є такий курс'
+removeCourse("React"); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+removeCourse("Vue"); // 'Курс з таким іменем не найдено'
+updateCourse("Express", "NestJS"); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
+console.log(courses);
+
+function addCourse(name) {
+  if (courses.includes(name)) {
+    console.log("Такий курс вже є");
+    return;
+  }
+  courses.push(name);
+}
+function removeCourse(name) {
+  const incl = courses.indexOf(name);
+  if (incl === -1) {
+    console.log("Нема");
+    return;
+  }
+  courses.splice(incl, 1);
+}
+function updateCourse(oldName, newName) {
+  const incl = courses.indexOf(oldName);
+
+  if (incl === -1) {
+    console.log("Нема");
+    return;
+  }
+  courses.splice(incl, 1, newName);
+}
