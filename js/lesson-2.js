@@ -250,3 +250,8 @@ const scientists = [
 //   (scientist) => scientist.name === "Albert" && scientist.surname === "Einstein"
 // );
 // console.log(albertBorn.born);
+
+// 7) Чи кожен вчений народився в 19ст
+
+const ifEvery = scientists.every(({ born }) => born >= 1800 && born < 1900);
+console.log(ifEvery);
