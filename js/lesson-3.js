@@ -109,27 +109,57 @@
 // addItem(item) - отримує новий товар та додає його до поточних.
 // removeItem(item) - отримає товар і, якщо він є, видаляє його з поточних.
 
-class Storage {
-  constructor(arr) {
-    this.arr = arr;
+// class Storage {
+//   constructor(arr) {
+//     this.arr = arr;
+//   }
+//   getItems() {
+//     return this.arr;
+//   }
+//   addItem(item) {
+//     this.arr.push(item);
+//   }
+//   removeItem(item) {
+//     const itemIdx = this.arr.indexOf(item);
+//     if (itemIdx === -1) {
+//       return;
+//     } else {
+//       this.arr.splice(itemIdx, 1);
+//     }
+//   }
+// }
+
+// const items = new Storage(["Виноград", "Банани", "Кокоси", "Ківі"]);
+// items.addItem("Манго");
+// items.removeItem("Ківі");
+// console.log(items);
+
+// ЗАДАЧА 4
+// Напиши клас Client який створює об'єкт із властивостями login і email.
+// Оголоси приватні властивості #login і #email, доступ до яких зроби через геттер та сеттер login і email.
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
   }
-  getItems() {
-    return this.arr;
+  get login() {
+    return this.#login;
   }
-  addItem(item) {
-    this.arr.push(item);
+  set login(newLogin) {
+    this.#login = newLogin;
   }
-  removeItem(item) {
-    const itemIdx = this.arr.indexOf(item);
-    if (itemIdx === -1) {
-      return;
-    } else {
-      this.arr.splice(itemIdx, 1);
-    }
+  get email() {
+    return this.#email;
+  }
+  set email(newEmoil) {
+    this.#email = newEmoil;
   }
 }
 
-const items = new Storage(["Виноград", "Банани", "Кокоси", "Ківі"]);
-items.addItem("Манго");
-items.removeItem("Ківі");
-console.log(items);
+const NewClient = new Client("login", "email@gmail.com");
+
+console.log(NewClient);
