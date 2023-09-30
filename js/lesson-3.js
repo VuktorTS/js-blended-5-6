@@ -41,22 +41,62 @@
 // person.bio();
 // person.greeting();
 
-class Person {
-  constructor({ firstName, age, interest }) {
-    this.firstName = firstName;
+// class Person {
+//   constructor({ firstName, age, interest }) {
+//     this.firstName = firstName;
+//     this.age = age;
+//     this.interest = interest;
+//   }
+//   bio() {
+//     console.log(
+//       `Привіт ${this.firstName} мені ${this.age} років. Мені подобається ${this.interest}`
+//     );
+//   }
+//   greeting() {
+//     console.log(`Привіт, я ${this.firstName}`);
+//   }
+// }
+// const person = new Person({ firstName: "Khrystyna", age: 18, interest: "JS" });
+// console.log(person);
+// person.bio();
+// person.greeting();
+
+// ЗАДАЧА 2
+// Напишіть клас User для створення користувача з наступними властивостями:
+// username - імя, рядок
+// age - вік, число
+// numberOfPosts - кількість постів, число
+// Клас очікує один параметр - об'єкт налаштувань з однойменними властивостями.
+// Добавте метод getInfo(), який повертає рядок:
+// User ${ імя } is ${ вік } years old and has ${ кількість постів } posts.
+
+class User {
+  constructor({ username, age, numberOfPost }) {
+    this.username = username;
     this.age = age;
-    this.interest = interest;
+    this.numberOfPost = numberOfPost;
   }
-  bio() {
-    console.log(
-      `Привіт ${this.firstName} мені ${this.age} років. Мені подобається ${this.interest}`
-    );
-  }
-  greeting() {
-    console.log(`Привіт, я ${this.firstName}`);
+  getInfo() {
+    return `User ${this.username} is ${this.age} years old and has ${this.numberOfPost} posts.`;
   }
 }
-const person = new Person({ firstName: "Khrystyna", age: 18, interest: "JS" });
-console.log(person);
-person.bio();
-person.greeting();
+
+const user = new User({ username: "Victor", age: 37, numberOfPost: 6 });
+
+console.log(user);
+console.log(user.getInfo());
+
+class NewUser extends User {
+  constructor({ username, age, numberOfPost }) {
+    super({ username, age, numberOfPost });
+    this.username = username;
+  }
+  getUser() {
+    return `My name ${this.username}`;
+  }
+}
+
+const newUser = new NewUser({ username: "Poly", age: 30, numberOfPost: 1 });
+
+console.log(newUser);
+console.log(newUser.getUser());
