@@ -138,28 +138,68 @@
 // Напиши клас Client який створює об'єкт із властивостями login і email.
 // Оголоси приватні властивості #login і #email, доступ до яких зроби через геттер та сеттер login і email.
 
-class Client {
-  #login;
-  #email;
+// class Client {
+//   #login;
+//   #email;
 
-  constructor(login, email) {
-    this.#login = login;
-    this.#email = email;
-  }
-  get login() {
-    return this.#login;
-  }
-  set login(newLogin) {
-    this.#login = newLogin;
-  }
-  get email() {
-    return this.#email;
-  }
-  set email(newEmoil) {
-    this.#email = newEmoil;
-  }
-}
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+//   get login() {
+//     return this.#login;
+//   }
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+//   get email() {
+//     return this.#email;
+//   }
+//   set email(newEmoil) {
+//     this.#email = newEmoil;
+//   }
+// }
 
-const NewClient = new Client("login", "email@gmail.com");
+// const NewClient = new Client("login", "email@gmail.com");
 
-console.log(NewClient);
+// console.log(NewClient);
+
+// ЗАДАЧА 5
+// Виправте помилки, щоб код працював
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+// product.showPrice();
+
+// ЗАДАЧА 6
+// Виправте помилки, щоб код працював
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+
+// function callAction(action) {
+//   action();
+// }
+// const obj = product.showPrice.bind(product);
+// // console.log(obj);
+// callAction(obj);
+
+// ЗАДАЧА 6
+// Виправте помилки, щоб код працював
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+
+// function callAction(action) {
+//   action.call(product);
+// }
+// callAction(product.showPrice);
